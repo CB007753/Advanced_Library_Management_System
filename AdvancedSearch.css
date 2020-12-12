@@ -1,0 +1,441 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 3, 2020, 8:11:13 PM
+    Author     : CRIMINAL
+*/
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Nov 16, 2020, 1:49:22 PM
+    Author     : Shifny
+*/
+
+
+body,html{
+  height:100%;
+  margin:0;
+  font-family:Roboto;
+}
+*{
+  box-sizing:border-box;
+}
+.container{
+  display:flex;
+  width:100%;
+  height:100%;
+  
+  
+}
+
+.container .side-bar.minimised{
+  min-width:50px;
+  background: burlywood;
+  
+  border-color: black;
+}
+.container .side-bar{
+  min-width:300px;
+  transition:0.3s;
+  border-right:1px solid #eee;
+}
+.container .main-content{
+  width:100%;
+  overflow-y:auto;
+  padding-top:25px;
+  background: beige;
+}
+
+.nav-list{
+  width:100%;
+  height:40px;
+  line-height:40px;
+  display:block;
+  overflow:hidden;
+  color:inherit;
+  text-decoration:none;
+}
+.nav-list:hover{
+  background:#ccc;
+  color:#000;
+}
+.nav-list.active{
+  background:#333;
+  color:#eee;
+}
+.nav-icon,.nav-title{
+  display:inline-block;
+  text-align:center;
+}
+.nav-icon{
+  width:50px;
+}
+.side-bar.minimised .opened,.side-bar .closed{
+  display:none;
+}
+.side-bar.minimised .closed,.side-bar .opened{
+  display:block;
+}
+.nav-title{
+  transition:0.3s;
+}
+.side-bar.minimised .nav-title{
+  max-width:0;
+  color:black;
+}
+
+.main-content .tabs{
+  width:100%;
+  float:left;
+}
+.tabs .tab,.tabs .tab-header{
+  line-height:40px;
+  float:left;
+  padding:0 30px;
+  color:#aaa;
+  text-decoration:none;
+  transition:0.3s;
+}
+.tabs .tab-header{
+  font-size:25px;
+  color:inherit;
+  padding:0 50px;
+}
+.tabs .tab.active,.tabs .tab:hover{
+  color:inherit;
+  font-weight:bold;
+}
+.dashboard{
+  font-size: 20px;
+  padding-left:50px;
+  
+}
+.tab-body{
+  width:100%;
+  float:left;
+}
+.tab-item{
+  width:25%;
+  float:left;
+  height:300px;
+  background:#fff;
+  color:#000;
+  margin:4%;
+  outline:3px solid transparent;
+  border:2px solid transparent;
+  box-shadow:0 0 25px rgba(0,0,0,0.1);
+  transition:0.3s;
+  text-decoration:none;
+  color:inherit;
+  position:relative;
+  overflow:hidden;
+  word-wrap:break-word;
+}
+.tab-item:hover{
+  outline:3px solid #eee;
+  border:2px solid #333;
+}
+.tab-item .tab-title{
+  width:100%;
+  height:60%;
+  font-size:18px;
+  padding:50px;
+  transition:0.1s;
+  text-align:center;
+}
+.tab-item:hover .tab-title{
+  font-size:25px;
+}
+.tab-item .tab-details{
+  widht:100%;
+  height:40px;
+  padding:20px;
+  font-size:14px;
+  transition:0.3s;
+}
+
+
+.tab-item.ongoing{
+  background:rgb(56,200,56);
+  color:#fff;
+  box-shadow:0 0 25px rgba(56,250,56,0.9);
+}
+.tab-item.ongoing:hover{
+  background:rgb(36,210,36);
+  outline:3px solid rgb(56,210,56);
+  border:2px solid #fff;
+}
+
+.tab-item.ong{
+  background:rgb(0,255,255);
+  color:#000;
+  box-shadow:0 0 25px rgba(0,255,255,0.9);
+}
+.tab-item.mock:hover{
+  background:rgb(240,240,66);
+  outline:3px solid rgb(230,230,46);
+  border:2px solid #fff;
+}
+
+.tab-item.mock{
+  background:rgb(230,230,46);
+  color:#000;
+  box-shadow:0 0 25px rgba(230,230,46,0.9);
+}
+.tab-item.mock:hover{
+  background:rgb(240,240,66);
+  outline:3px solid rgb(230,230,46);
+  border:2px solid #fff;
+}
+
+.tab-item.ongg{
+  background:rgb(255,174,25);
+  color:#000;
+  box-shadow:0 0 25px rgba(255,174,25,0.9);
+}
+.tab-item.mock:hover{
+  background:rgb(240,240,66);
+  outline:3px solid rgb(230,230,46);
+  border:2px solid #fff;
+}
+.tab-info{
+  width:100%;
+  height:100%;
+  padding:15px;
+  position:absolute;
+  display:none;
+  transition:0.1s;
+}
+.tab-item:hover .tab-info,.tab-info.active{
+  display:block;
+}
+.tab-info.active{
+  background:inherit;
+}
+.tab-info .display-info{
+  background:transparent;
+  border:0;
+  font-size:20px;
+  color:inherit;
+  outline:0;
+}
+.tab-info .info{
+  display:none;
+  padding:10px;
+  font-size:13px;
+}
+.tab-info.active .info{
+  display:block;
+}
+.info .info-item{
+  width:100%;
+  padding:5px 0;
+}
+@media screen and (max-width:1080px){
+  .tab-item{
+    width:40%;
+    margin:5%;
+  }
+}
+@media screen and (max-width:760px){
+  .tab-item{
+    width:80%;
+    margin:10%;
+  }
+}
+
+
+/*css for search button*/
+* {
+  box-sizing: border-box;
+}
+form.AForm input[type=text]
+{
+    padding: 6px;
+  font-size: 15px;
+  border: 1px solid grey;
+  float: left;
+  width: 25%;
+  background: #f1f1f1;
+}
+
+form.AForm input[type=textarea]
+{
+    padding: 6px;
+  font-size: 15px;
+  border: 1px solid grey;
+  float: left;
+  width: 25%;
+  background: #f1f1f1;
+}
+form.AForm button{
+   float: left;
+  width: 5%;
+  padding: 6px;
+  background: chocolate;
+  color: white;
+  font-size: 14px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer; 
+}
+
+form.AForm button:hover{
+     background: burlywood;
+     color: white; 
+}
+/* Style the search field */
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 40%;
+  background: #f1f1f1;
+}
+
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: chocolate;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: burlywood;
+  color: white;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/*end of search button css*/
+
+form.example select{
+    padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 40%;
+  background: #f1f1f1;
+}
+.result{
+  
+  width:90%;
+  overflow: hidden;
+  font-family: "Ubuntu",sans-serif;
+  margin: 20px auto;
+  padding: 20px;
+  
+}
+
+.result ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+.result ul li{
+    list-style: none;
+    float: left;
+    width: 19%;
+    height: 295px;
+    background: greenyellow;
+    margin: 10px 5px 10px 22px;
+    box-sizing: border-box;
+   
+}
+.result ul li .title{
+    background: gainsboro;
+    color: black;
+}
+
+.result ul li .title:hover{
+    background: black;
+    color: white;
+}
+.result ul li:hover{
+    opacity: 0.9;
+    transform: scale(0.9);
+    
+}
+
+.result ul li .title{
+    width: 101.4%;
+    height: 50px;
+    line-height: 50px;
+    background: #c9c9c9;
+    text-align: center;
+    border-radius: 3px;
+}
+
+@media screen and (max-width:1200px)
+{
+    .result ul li{
+        width: 40%;
+        margin: 20px;
+    }
+}
+
+hr{
+  border: 2px solid brown;
+  border-radius: 2px;
+}
+
+.clearfix {
+  overflow: auto;
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: fixed;
+  background-color: #ccc ;
+  text-align: left;
+  color: black;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 10px 15px;
+  z-index: 1;
+  right: 0;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.header {
+  background-color: beige;
+  
+  padding: 20px;
+}
+
+
+
+
+
+
